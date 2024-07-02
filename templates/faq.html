@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Oficios | XYZ</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/_123034.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a1b880f44d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img class="logo" src="{{ url_for('static', filename='images/logoXYZv2.png') }}" height="90" alt="logoXYZ"> 
+                <label class="logo-txt"> INSTITUTO XYZ</label>       
+            </div>
+        
+        <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+        <dotlottie-player src="https://lottie.host/22d38f73-cd06-47f3-90e2-5d13339beb7e/bLrRv4fwSp.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+         -->
+         
+            <input type="checkbox" id="menu-check">
+            <label id="menu-toggle" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+         
+            <ul class="nav-list">
+                <li><a href="{{ url_for('index') }}" >Cursos</a></li>
+                <li><a href="{{ url_for('contacto') }}" >Contacto</a></li>
+                <li><a href="{{ url_for('administracion') }}" >Administracion</a></li>
+                <li><a href="{{ url_for('faq') }}" >Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="parallax-completo">
+            <div class="parallax-overlay"> 
+                <div class="parallax-content">
+                    <h2>INSTITUTO XYZ</h2>
+                    
+                    <p>"Abraza tus errores. Te hacen ser quien eres". Beyoncé</p>
+                    <!--<button>Más información</button> -->
+                </div>
+            </div>   
+        </section>
+        <section>
+            <h1>Preguntas Frecuentes</h1>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Cómo me inscribo?</div>
+                <div class="faq-answer">Puedes inscribirte completando el formulario de inscripción en nuestra página web.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Cuáles son los requisitos para anotarme a los cursos?</div>
+                <div class="faq-answer">Los requisitos varían según el curso. Generalmente, se requiere ser mayor de 18 años y tener conocimientos básicos en el área del curso.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Cuál es el costo de los cursos?</div>
+                <div class="faq-answer">El costo de los cursos varía. Por favor, consulta la sección de precios en nuestra página web para obtener más información.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Puedo anotarme en más de un curso?</div>
+                <div class="faq-answer">Sí, puedes anotarte en más de un curso siempre y cuando los horarios no se solapen.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Los cupos son limitados?</div>
+                <div class="faq-answer">Sí, los cupos son limitados y se asignan por orden de inscripción.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Los cursos son virtuales o presenciales?</div>
+                <div class="faq-answer">Ofrecemos tanto cursos virtuales como presenciales. Consulta la descripción del curso para obtener más detalles.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Puedo anotarme a un curso de otra localidad?</div>
+                <div class="faq-answer">Sí, puedes anotarte a cursos de otras localidades, especialmente los cursos virtuales que no tienen restricciones geográficas.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Qué dispositivo necesito para las clases?</div>
+                <div class="faq-answer">Para las clases virtuales, necesitas una computadora, tablet o smartphone con acceso a internet.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿En qué plataformas se realizan los cursos?</div>
+                <div class="faq-answer">Utilizamos plataformas como Zoom, Google Meet y Microsoft Teams para las clases virtuales.</div>
+            </div>
+        
+            <div class="faq">
+                <div class="faq-question" onclick="toggleAnswer(this)">¿Puedo ver las clases grabadas?</div>
+                <div class="faq-answer">Sí, las clases virtuales suelen ser grabadas y puedes acceder a ellas posteriormente si no puedes asistir en vivo.</div>
+            </div>
+            
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <h4>Instituto XYZ</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Nuestro servicios</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Preguntas</a></li>
+                        <li><a href="#">Centro de enseñanza</a></li>
+                        <li><a href="#">Socios</a></li>
+                        <li><a href="#">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Siguenos</h4>
+                    <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    
+                </div>
+                <p>&copy; 2024 - INSTITUTO XYZ - Grupo 5 - Codo a Codo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>

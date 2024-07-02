@@ -1,0 +1,25 @@
+# Entorno Virtual
+venv/
+flask_env/
+
+# Archivos de configuración de editores/IDEs
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de compilación de Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Archivos de logs y bases de datos temporales
+*.log
+*.sqlite3
+
+# Archivos de sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de Python
+*.env

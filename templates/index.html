@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Oficios | XYZ</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/_123034.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a1b880f44d.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img class="logo" src="{{ url_for('static', filename='images/logoXYZv2.png') }}" height="90" alt="logoXYZ"> 
+                <label class="logo-txt"> INSTITUTO XYZ</label>       
+            </div>
+        
+        <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+        <dotlottie-player src="https://lottie.host/22d38f73-cd06-47f3-90e2-5d13339beb7e/bLrRv4fwSp.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+         -->
+         
+            <input type="checkbox" id="menu-check">
+            <label id="menu-toggle" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+         
+            <ul class="nav-list">
+                <li><a href="{{ url_for('index') }}" >Cursos</a></li>
+                <li><a href="{{ url_for('contacto') }}" >Contacto</a></li>
+                <li><a href="{{ url_for('administracion') }}" >Administracion</a></li>
+                <li><a href="{{ url_for('faq') }}" >Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="parallax-completo">
+            <div class="parallax-overlay"> 
+                <div class="parallax-content">
+                    <h2>INSTITUTO XYZ</h2>
+                    
+                    <p>"Abraza tus errores. Te hacen ser quien eres". Beyoncé</p>
+                    <!--<button>Más información</button> -->
+                </div>
+            </div>   
+        </section>
+        <section id="landing">
+            <!-- Sector de banner  -->
+            <div id="landing-text">
+                <div id="landing-text-inner">
+                    <h1>CURSOS OFICIOS XYZ</h1>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h2>Cursos más Destacados</h2>
+            </div>
+        <div class="container-cards">
+            <!-- Sector de cursos -->
+            <article class="card">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/redes.jpg') }}" alt="Redes" >
+                </figure>
+                <div class="contenido">
+                    <h3>Redes</h3>
+                    <p>Aprende a diseñar, implementar y gestionar redes de computadoras, adquiriendo conocimientos en protocolos, seguridad y administración de redes.</p>
+                    <a href="#">Leer Más</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/armadoPC.jpg') }}" alt="Armado de PC" >
+                </figure>
+                <div class="contenido">
+                    <h3>Armado de PC</h3>
+                    <p>Conviértete en un experto en ensamblar computadoras desde cero, comprendiendo cada componente y su función para optimizar el rendimiento.</p>
+                    <a href="#">Leer Más</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/administracion.jpg') }}" alt="Administración" >
+                </figure>
+                <div class="contenido">
+                    <h3>Administración</h3>
+                    <p>Desarrolla habilidades en gestión empresarial, incluyendo planificación, organización y control de recursos para mejorar la eficiencia y efectividad organizacional.</p>
+                    <a href="#">Leer Más</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="{{ url_for('static', filename='images/computacion.jpg') }}" alt="Computación" >
+                </figure>
+                <div class="contenido">
+                    <h3>Computación</h3>
+                    <p>Domina los fundamentos de la computación, desde programación básica hasta el manejo de software y hardware, preparándote para el mundo digital.</p>
+                    <a href="#">Leer Más</a>
+                </div>
+            </article>
+        </div>
+
+            <div>
+                <h2>Nuestros Alumnos</h2>
+            </div>
+      
+        
+       
+        
+        <div class="wrapper-grid-profile">
+        
+            <article class="container-profile">
+                <div class="banner-img-profile"></div>
+                <img src="{{ url_for('static', filename='images/estudiante1.jpg') }}" alt="imagen de perfil" class="img-profile">
+                <h2 class="name-profile">Barbara Hinojosa</h2>
+                <p class="description-profile">Profesional en Redes con más de 10 años de experiencia en la industria de TI. Experta en diseño y administración de sistemas de red.</p>
+                <button class="btn-profile">Cursos Realizados</button>
+            </article>
+            <article class="container-profile">
+                <div class="banner-img-profile"></div>
+                <img src="{{ url_for('static', filename='images/estudiante2.jpg') }}" alt="imagen de perfil" class="img-profile">
+                <h2 class="name-profile">Carlos Martínez</h2>
+                <p class="description-profile">Especialista en Armado de PC, con una pasión por la tecnología y la enseñanza de técnicas eficientes para construir computadoras de alto rendimiento.</p>
+                <button class="btn-profile">Cursos Realizados</button>
+            </article>
+            <article class="container-profile">
+                <div class="banner-img-profile"></div>
+                <img src="{{ url_for('static', filename='images/estudiante3.jpg') }}" alt="imagen de perfil" class="img-profile">
+                <h2 class="name-profile">Lucía Fernández</h2>
+                <p class="description-profile">Experta en Administración con un enfoque en mejorar procesos empresariales y maximizar la productividad organizacional.</p>
+                <button class="btn-profile">Cursos Realizados</button>
+                </article>
+            <article class="container-profile">
+                <div class="banner-img-profile"></div>
+                <img src="{{ url_for('static', filename='images/estudiante4.jpg') }}" alt="imagen de perfil" class="img-profile">
+                <h2 class="name-profile">Juan Pérez</h2>
+                <p class="description-profile">Ingeniero en Computación con un profundo conocimiento en programación y sistemas informáticos, dedicándose a la docencia y al desarrollo de software.</p>
+                <button class="btn-profile">Cursos Realizados</button>
+            </article>            
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <h4>Instituto XYZ</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Nuestro servicios</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Preguntas</a></li>
+                        <li><a href="#">Centro de enseñanza</a></li>
+                        <li><a href="#">Socios</a></li>
+                        <li><a href="#">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Siguenos</h4>
+                    <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    
+                </div>
+                <p>&copy; 2024 - INSTITUTO XYZ - Grupo 5 - Codo a Codo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>

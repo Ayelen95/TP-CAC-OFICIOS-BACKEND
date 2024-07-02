@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Oficios | XYZ</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/_123034.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a1b880f44d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img class="logo" src="{{ url_for('static', filename='images/logoXYZv2.png') }}" height="90" alt="logoXYZ"> 
+                <label class="logo-txt"> INSTITUTO XYZ</label>       
+            </div>
+        
+        <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+        <dotlottie-player src="https://lottie.host/22d38f73-cd06-47f3-90e2-5d13339beb7e/bLrRv4fwSp.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+         -->
+         
+            <input type="checkbox" id="menu-check">
+            <label id="menu-toggle" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+            </label>
+         
+            <ul class="nav-list">
+                <li><a href="{{ url_for('index') }}" >Cursos</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="{{ url_for('administracion') }}" >Administracion</a></li>
+                <li><a href="{{ url_for('faq') }}">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="parallax-completo">
+            <div class="parallax-overlay"> 
+                <div class="parallax-content">
+                    <h2>INSTITUTO XYZ</h2>
+                    
+                    <p>"Abraza tus errores. Te hacen ser quien eres". Beyoncé</p>
+                    <!--<button>Más información</button> -->
+                </div>
+            </div>   
+        </section>
+        <section class="formulario">
+            <h2>Formulario de registro</h2> <!-- Agregamos un encabezado -->
+            <div class="formulario">
+                <form name="registroForm" action="{{ url_for('registrar_alumno') }}" method="post">
+                    <fieldset>
+                        <legend>Formulario de Contacto</legend>
+                        <div class="Personal_info">
+                            <div class="single_text">
+                                <p>
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" maxlength="30" required>
+                                </p>
+                            </div>
+                            <div class="single_text">
+                                <p>
+                                    <label>Apellido</label>
+                                    <input type="text" name="apellido" maxlength="30" required>
+                                </p>
+                            </div>
+                            <div class="single_text">
+                                <p>
+                                    <label>DNI</label>
+                                    <input type="number" name="dni">
+                                </p>
+                            </div>
+                            <div class="single_text">
+                                <p>
+                                    <label>Provincia</label>
+                                    <select class="drown_list" name="provincia" required>
+                                        <option value="" disabled selected>Selecciona una Provincia</option>
+                                        {% for d in data %}
+                                        <option value="{{d.id}}">{{d.provincia}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </p>
+                            </div>
+                          
+                            <div>
+                                <p>Género:</p>
+                                <label>Femenino<input name="genero" type="radio" value="Femenino"></label>
+                                <label>Masculino<input name="genero" type="radio" value="Masculino"></label>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Turno</p>
+                            <div class="radio-button">
+                                <label>Mañana<input type="radio" name="turno" value="Mañana" id="turnoMañana"></label>
+                                <label>Tarde<input type="radio" name="turno" value="Tarde" id="turnoTarde"></label>
+                                <label>Noche<input type="radio" name="turno" value="Noche" id="turnoNoche"></label>
+                            </div>
+                            <select id="cursos" class="drown_list" name="curso" required>
+                                <option value="" disabled selected>Selecciona una Curso</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Registrar">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+        <div class="carrusel">
+            <figure>
+                <img src="{{ url_for('static', filename='images/oficios1.jpg') }}" alt="Aprendiendo un oficio" class="polaroid RotarIzq">
+            </figure>
+            <figure>
+                <img src="{{ url_for('static', filename='images/oficios2.jpg') }}" alt="Trabajando en equipo" class="polaroid">
+            </figure>
+            <figure>
+                <img src="{{ url_for('static', filename='images/oficios3.jpg') }}" alt="Desarrollando habilidades" class="polaroid RotarDer">
+            </figure>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <h4>Instituto XYZ</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Nuestro servicios</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Preguntas</a></li>
+                        <li><a href="#">Centro de enseñanza</a></li>
+                        <li><a href="#">Socios</a></li>
+                        <li><a href="#">Cursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Síguenos</h4>
+                    <div class="social-link">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <p>&copy; 2024 - INSTITUTO XYZ - Grupo 5 - Codo a Codo - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
